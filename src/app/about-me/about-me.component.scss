@@ -1,0 +1,52 @@
+section {
+  background-color: #141d2f;
+  //   background: linear-gradient(
+  //     165.69deg,
+  //     #1a2743 37.75%,
+  //     #27334b 43.25%,
+  //     #141d2f 70.18%
+  //   );
+
+  padding: 1rem 1rem;
+  color: white;
+  position: relative;
+}
+
+.aboutMeContainer {
+  position: relative;
+  z-index: 4;
+}
+
+.aboutMeBox {
+  margin-bottom: 10%;
+  h2 {
+    font-size: 3rem;
+  }
+
+  p {
+    width: 80%;
+    word-break: break-all;
+  }
+}
+
+.aboutMePersonalBox {
+  display: flex;
+  margin: 1rem 0rem;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  img {
+    height: 50px;
+    width: 50px;
+  }
+  p {
+    max-width: 70%;
+  }
+}
+
+.purpleShadow {
+  position: absolute;
+  top: -90px;
+  right: 0;
+  z-index: 3;
+}

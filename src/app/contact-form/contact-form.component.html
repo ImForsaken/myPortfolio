@@ -1,0 +1,27 @@
+<section>
+    <div id="form">
+        <div class="contactHeadBox">
+            <hr>
+            <h2>Contact</h2>
+        </div>
+        <div [ngStyle]="{'padding': '1rem'}">
+            <span>Got a problem to solve?</span>
+            <p>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your
+                projects with my work.</p>
+            <span>Need a Frontend developer? <b>Contact me!</b></span>
+        </div>
+    </div>
+    <form [ngStyle]="{'padding': '1rem'}" (submit)="sendMail(); myForm.reset()" #myForm ngNativeValidate>
+        <input placeholder="Your name" required type="text" name="name" #nameField>
+        <input placeholder="Your email" required type="email" name="email" #emailField
+            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <textarea placeholder="Your message to me" required type="text" name="message" #messageField></textarea>
+        <button #sendButton>Send message :)</button>
+    </form>
+    <img class="purpleShadow" src="/assets/img/purpleContactShadow.svg" alt="purple shadow">
+    <div [ngStyle]="{'display': 'flex', 'justify-content': 'flex-end', 'padding': '1rem'}">
+        <a class="goUpBtn" href="#">
+            <img src="/assets/img/goUpBtn.svg" alt="go to top page button">
+        </a>
+    </div>
+</section>

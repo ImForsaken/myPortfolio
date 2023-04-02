@@ -1,0 +1,95 @@
+section {
+  * {
+    color: white !important;
+  }
+  position: relative;
+  contain: paint;
+}
+
+.contactHeadBox {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  h2 {
+    font-size: 3rem;
+  }
+  hr {
+    background-color: #4b47ff;
+    width: 10%;
+    margin: 0;
+    border-radius: 0px 2px 2px 0px;
+    border: solid #4b47ff;
+  }
+}
+
+.test {
+  background-color: red;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+
+  ::placeholder {
+    color: white !important;
+  }
+
+  input {
+    padding: 15px 25px;
+    width: 100%;
+    background: #141d2f;
+    border: 1px solid #4b47ff;
+    border-radius: 10px;
+    &:focus:invalid {
+      outline: none;
+      border-color: red;
+    }
+    &:focus:valid {
+      outline: none;
+      border-color: green;
+    }
+    &:valid {
+      outline: none;
+      border-color: green;
+    }
+  }
+  textarea {
+    padding: 15px 25px;
+    width: 100%;
+    height: 100px;
+    background: #141d2f;
+    border: 1px solid #4b47ff;
+    border-radius: 10px;
+    &:focus:invalid {
+      outline: none;
+      border-color: red;
+    }
+    &:focus:valid {
+      outline: none;
+      border-color: green;
+    }
+    &:valid {
+      outline: none;
+      border-color: green;
+    }
+  }
+  button {
+    background: #00bee8;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 30px;
+    width: auto;
+    font-size: 1rem;
+    line-height: 120%;
+  }
+}
+
+.purpleShadow {
+  position: absolute;
+  bottom: -75px;
+  height: 235px;
+}

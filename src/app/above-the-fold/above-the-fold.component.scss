@@ -1,0 +1,301 @@
+// .headSection {
+//   height: calc(100vh - 56px);
+//   // background-color: #1a2743;
+//   background-color: #141d2f;
+//   // background: radial-gradient(
+//   // background: linear-gradient(
+//   //   165.69deg,
+//   //   #1a2743 37.75%,
+//   //   #27334b 43.25%,
+//   //   #141d2f 70.18%
+//   // );
+
+//   //   102.53% 81.55% at 46.74% 3.94%,
+//   //   #1a2743 0.37%,
+//   //   #27334b 13.54%,
+//   //   #141d2f 71.91%
+//   // );
+//   display: flex;
+// }
+
+// .heroBox {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-evenly;
+//   width: 100%;
+//   // overflow: hidden;
+//   // flex-grow: 1;
+// }
+
+// .heroProfileBox {
+//   display: flex;
+//   justify-content: center;
+//   position: relative;
+//   align-items: center;
+// }
+
+// .heroProfile {
+//   height: 300px;
+//   z-index: 1;
+// }
+
+// .purpleShadowHeader {
+//   background: #4b47ff;
+//   filter: blur(20.5px);
+//   width: 190px;
+//   height: 159px;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// .purple_Shadow {
+//   background: #4b47ff;
+//   filter: blur(50.5px);
+//   width: 190px;
+//   height: 191px;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// .greenShadowHeader {
+//   width: 188px;
+//   height: 108px;
+//   background: #00bee8;
+//   filter: blur(41.5px);
+//   transform: rotate(191deg);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// // .doubleShadowImg {
+// //   position: absolute;
+// //   top: 0;
+// //   left: 0;
+// //   right: 0;
+// //   height: 100%;
+// //   width: 100%;
+// // }
+
+// .profileShape {
+//   // width: 700px;
+//   // height: 500px;
+//   position: absolute;
+//   bottom: -706px;
+//   z-index: 2;
+// }
+
+// .socialIconContainer {
+//   display: flex;
+//   bottom: 5%;
+//   z-index: 3;
+//   width: 80%;
+// }
+
+// .socialIconBox {
+//   display: flex;
+//   justify-content: space-around;
+//   width: 100%;
+//   a {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+// }
+
+// .purpleLineSvg {
+//   margin-right: 10%;
+// }
+
+section {
+  background-color: #141d2f;
+  height: calc(100vh - 100px);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  contain: paint;
+  @media (width > 991px) {
+    contain: none;
+  }
+}
+
+.upperHeadContainer {
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @media (width > 991px) {
+    // width: 50%;
+    width: 100%;
+    height: 90%;
+    // justify-content: flex-end;
+    // justify-content: unset;
+    justify-content: flex-end;
+  }
+}
+
+.heroContainer {
+  height: 50%;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  @media (width > 991px) {
+    height: unset;
+    // flex-direction: unset;
+    justify-content: unset;
+    align-items: unset;
+    overflow: hidden;
+  }
+}
+
+.heroProfile {
+  height: 100%;
+  z-index: 1;
+  object-fit: contain;
+  @media (width > 991px) {
+    // height: 800px;
+    width: 70%;
+  }
+}
+
+.purple_Shadow {
+  background: #4b47ff;
+  filter: blur(50.5px);
+  width: 190px;
+  height: 191px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // @media (width >= 991px) {
+  //   filter: blur(45.5px);
+  //   width: 30%;
+  //   height: 50%;
+  //   top: 35%;
+  //   left: 25%;
+  //   transform: none;
+  // }
+  @media (width > 991px) {
+    display: none;
+  }
+}
+
+.purpleShadowDesktop {
+  position: absolute;
+  top: 20%;
+  left: -30%;
+  height: 100%;
+  width: 100%;
+  @media (width <= 991px) {
+    display: none;
+  }
+}
+
+.greenShadowHeaderDesktop {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-1%, -30%);
+  @media (width <= 991px) {
+    display: none;
+  }
+}
+
+.greenShadowHeader {
+  width: 188px;
+  height: 108px;
+  background: #00bee8;
+  filter: blur(41.5px);
+  transform: rotate(191deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // @media (width >= 991px) {
+  //   filter: blur(45.5px);
+  //   width: 35%;
+  //   height: 50%;
+  //   top: 35%;
+  //   left: 15%;
+  //   transform: none;
+  // }
+  @media (width > 991px) {
+    display: none;
+  }
+}
+
+.profileShape {
+  position: absolute;
+  bottom: -700px;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  @media (width > 991px) {
+    display: none;
+  }
+}
+
+.profileShapeDesktop {
+  z-index: 3;
+  position: absolute;
+  bottom: -50%;
+  height: 100%;
+  width: 100%;
+  @media (width <= 991px) {
+    display: none;
+  }
+}
+
+.socialIconContainer {
+  display: flex;
+  z-index: 4;
+  width: 80%;
+  align-items: center;
+  hr {
+    background-color: #4b47ff;
+    width: 20%;
+    border: solid #4b47ff;
+    margin: 0;
+    border-radius: 0px 4px 4px 0px;
+  }
+}
+
+.socialIconBox {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    img {
+      height: 50px;
+      @media (width <= 430px) {
+        height: 35px;
+      }
+    }
+  }
+
+  .emailDesktop {
+    font-size: clamp(1.5rem, 2.3vw, 3rem);
+    @media (width <= 991px) {
+      display: none;
+    }
+  }
+}

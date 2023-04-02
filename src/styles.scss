@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  font-size: min(
+    max(16px, calc(1rem + ((1vw - 3.2px) * 1.4286))),
+    48px
+  ) !important;
+}
+
+body {
+  background-color: #141d2f;
+
+  //   background: radial-gradient(
+  //     102.53% 81.55% at 46.74% 3.94%,
+  //     #1a2743 0.37%,
+  //     #27334b 13.54%,
+  //     #141d2f 71.91%
+  //   );
+  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  //   overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding: 70px;
+}
+
+* {
+  font-family: "Poppins" !important;
+  box-sizing: border-box;
+}

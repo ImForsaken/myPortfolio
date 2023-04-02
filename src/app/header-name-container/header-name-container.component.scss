@@ -1,0 +1,85 @@
+.headerNameContainer {
+  color: white;
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem 1rem;
+
+  @media (width > 991px) {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    button {
+      font-size: clamp(1rem, 3vw, 2rem);
+    }
+  }
+
+  button {
+    margin: 1rem 0px;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    background: #00bee8;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: clamp(0.5rem, 3vw, 1.1rem);
+    &:hover {
+      cursor: pointer;
+    }
+    @media (width > 991px) {
+      font-size: clamp(1rem, 3vw, 2rem);
+    }
+    @media (width <= 360px) {
+      padding: 10px 20px;
+    }
+  }
+}
+
+.headerNameBox {
+  display: flex;
+  white-space: nowrap;
+}
+
+.iAmBox {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: clamp(0.5rem, 7.2vw, 2.9rem);
+  line-height: 120%;
+  transform: rotate(180deg) translate(12%, 10%);
+  writing-mode: vertical-rl;
+  @media (width > 991px) {
+    font-size: clamp(0.5rem, 4.7vw, 7.5rem);
+    transform: rotate(180deg) translate(10%, 6%);
+  }
+}
+
+.khFrontEnd {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+
+  span {
+    &:first-child {
+      font-weight: 700;
+      font-size: clamp(1.1rem, 10vw, 4rem);
+      line-height: 120%;
+      @media (width > 991px) {
+        font-size: clamp(2.22rem, 6.2vw, 10rem);
+      }
+    }
+    &:nth-child(2) {
+      color: #4b47ff;
+      font-size: clamp(0.8rem, 6.58vw, 2.645rem);
+      line-height: 120%;
+      @media (width > 991px) {
+        font-size: clamp(0.8rem, 4.09vw, 6.57rem);
+      }
+    }
+  }
+}

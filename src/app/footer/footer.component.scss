@@ -1,0 +1,45 @@
+footer {
+  border-top: 4px solid #00bee8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.imprintLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 20px;
+}
+
+.socialIconBox {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin-bottom: 80px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 45px;
+      @media (width <= 430px) {
+        height: 35px;
+      }
+      @media (width >= 730px) {
+        height: 60px;
+      }
+    }
+  }
+}
