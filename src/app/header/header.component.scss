@@ -1,19 +1,28 @@
-nav {
+.mainNavbar {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 5;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #00bee8;
+    }
+  }
 }
 
 mat-toolbar {
   background-color: #141d2f;
   padding: 1rem;
-  height: 100px;
   * {
     color: white;
   }
   font: unset;
+  @media (width >991px) {
+    font-size: clamp(16px, calc(1rem + ((0.44vw - 3.2px) * 1.2)), 48px);
+    padding: 1rem 4rem;
+  }
 }
 
 .example-spacer {
@@ -30,11 +39,167 @@ mat-toolbar {
 .desktopNav {
   display: none;
 
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     display: flex;
     gap: 30px;
     a {
       text-decoration: none;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 5%;
+        transition: all 0.3s ease-in-out;
+        background-color: #4b47ff;
+      }
+
+      &:hover:after {
+        width: calc(45% - 5px);
+      }
+
+      &.active {
+        &:after {
+          width: 100%;
+        }
+        color: #00bee8;
+      }
     }
   }
 }
+
+// @keyframes underline {
+//   from {
+//     width: 0%;
+//   }
+//   to {
+//     width: 50%;
+//   }
+// }
+
+// @keyframes underline-in {
+//   from {
+//     width: 50%;
+//   }
+//   to {
+//     width: 100%;
+//   }
+// }
+
+// @keyframes underline-out {
+//   from {
+//     width: 50%;
+//   }
+//   to {
+//     width: 0%;
+//   }
+// }
+
+.menyAvPaa {
+  display: none;
+
+  &:checked ~ .burger > div {
+    background-color: #fff;
+  }
+
+  &:checked ~ .burger > div:nth-child(1) {
+    transform: translateY(15px) rotate(45deg);
+  }
+
+  &:checked ~ .burger > div:nth-child(2) {
+    opacity: 0;
+  }
+  &:checked ~ .burger > div:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+  }
+}
+
+.burger {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  div {
+    height: 2px;
+    background-color: #fff;
+    transition: 0.5s;
+    z-index: 999;
+  }
+}
+
+#meny {
+  background: rgba(20, 29, 47, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100vw);
+  z-index: 33;
+  transition: 0.5s;
+
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a {
+      font-size: 2rem;
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 5%;
+        transition: all 0.3s ease-in-out;
+        background-color: #4b47ff;
+      }
+
+      &:hover:after {
+        width: calc(45% - 5px);
+      }
+
+      &.active {
+        &:after {
+          width: 100%;
+        }
+        color: #00bee8;
+      }
+      &:hover {
+        color: #00bee8;
+      }
+    }
+  }
+}
+
+#menyAvPaa {
+  display: none;
+  &:checked ~ #meny {
+    transform: translateX(0rem);
+  }
+}
+
+//Volles HTML beispiel dazu
+// <header>
+//     <input type="checkbox" id="menyAvPaa">
+//     <label id="burger" for="menyAvPaa">
+//         <div></div>
+//         <div></div>
+//         <div></div>
+//     </label>
+//   <nav id="meny">
+//   </nav>
+// </header>
+// <main>
+// </main>

@@ -11,13 +11,14 @@
   @media (width > 991px) {
     position: absolute;
     top: 15%;
-    right: 5%;
-    button {
+    right: 4rem;
+    padding: 0;
+    a {
       font-size: clamp(1rem, 3vw, 2rem);
     }
   }
 
-  button {
+  a {
     margin: 1rem 0px;
     color: white;
     padding: 15px 30px;
@@ -25,12 +26,16 @@
     background: #00bee8;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    font-size: clamp(0.5rem, 3vw, 1.1rem);
+    font-size: clamp(0.8rem, 3vw, 1.4rem);
+    text-decoration: none;
+    transition: all 0.3s ease;
     &:hover {
       cursor: pointer;
+      background: #4b47ff;
+      transform: scale(1.1);
     }
     @media (width > 991px) {
-      font-size: clamp(1rem, 3vw, 2rem);
+      font-size: clamp(1rem, 2vw, 2rem);
     }
     @media (width <= 360px) {
       padding: 10px 20px;
@@ -48,12 +53,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: clamp(0.5rem, 7.2vw, 2.9rem);
+  font-size: clamp(1.5rem, 6.8vw, 3.5rem);
   line-height: 120%;
-  transform: rotate(180deg) translate(12%, 10%);
+  transform: rotate(180deg) translate(12%, 14%);
   writing-mode: vertical-rl;
   @media (width > 991px) {
-    font-size: clamp(0.5rem, 4.7vw, 7.5rem);
+    font-size: clamp(0.5rem, 4.65vw, 6rem);
     transform: rotate(180deg) translate(10%, 6%);
   }
 }
@@ -67,7 +72,7 @@
   span {
     &:first-child {
       font-weight: 700;
-      font-size: clamp(1.1rem, 10vw, 4rem);
+      font-size: clamp(2.2rem, 10vw, 5.5rem);
       line-height: 120%;
       @media (width > 991px) {
         font-size: clamp(2.22rem, 6.2vw, 10rem);
@@ -75,7 +80,7 @@
     }
     &:nth-child(2) {
       color: #4b47ff;
-      font-size: clamp(0.8rem, 6.58vw, 2.645rem);
+      font-size: clamp(1.45rem, 6.58vw, 3.4rem);
       line-height: 120%;
       @media (width > 991px) {
         font-size: clamp(0.8rem, 4.09vw, 6.57rem);

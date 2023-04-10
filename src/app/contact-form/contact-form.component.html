@@ -4,24 +4,40 @@
             <hr>
             <h2>Contact</h2>
         </div>
-        <div [ngStyle]="{'padding': '1rem'}">
-            <span>Got a problem to solve?</span>
+        <div class="contactText">
+            <span><b>Got a problem to solve?</b></span>
+            <br>
+            <br>
             <p>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your
                 projects with my work.</p>
             <span>Need a Frontend developer? <b>Contact me!</b></span>
         </div>
     </div>
-    <form [ngStyle]="{'padding': '1rem'}" (submit)="sendMail(); myForm.reset()" #myForm ngNativeValidate>
-        <input placeholder="Your name" required type="text" name="name" #nameField>
-        <input placeholder="Your email" required type="email" name="email" #emailField
-            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-        <textarea placeholder="Your message to me" required type="text" name="message" #messageField></textarea>
-        <button #sendButton>Send message :)</button>
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()" #myForm>
+        <div class="formInput">
+            <input placeholder="Your name" type="text" name="name" id="name" formControlName="name">
+            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                <div *ngIf="name?.errors?.['required']">Name is required</div>
+            </div>
+        </div>
+        <div class="formInput">
+            <input placeholder="Your email" type="email" pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$"
+                name="email" id="email" formControlName="email">
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                <div *ngIf="email?.errors?.['required']">Email is required</div>
+                <div *ngIf="email?.errors?.['pattern'] || email?.errors?.['email']">Invalid email format</div>
+            </div>
+        </div>
+        <div class="formInput">
+            <textarea placeholder="Your message to me" type="text" name="message" id="message"
+                formControlName="message"></textarea>
+            <div *ngIf="message?.invalid && (message?.dirty || message?.touched)">
+                <div *ngIf="message?.errors?.['required']">Message is required</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!contactForm.valid" #sendButton>Send message :)</button>
     </form>
     <img class="purpleShadow" src="/assets/img/purpleContactShadow.svg" alt="purple shadow">
-    <div [ngStyle]="{'display': 'flex', 'justify-content': 'flex-end', 'padding': '1rem'}">
-        <a class="goUpBtn" href="#">
-            <img src="/assets/img/goUpBtn.svg" alt="go to top page button">
-        </a>
-    </div>
+    <a class="goUpBtn" href="#">
+    </a>
 </section>

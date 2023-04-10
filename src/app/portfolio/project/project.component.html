@@ -1,47 +1,8 @@
 <section>
-    <!-- <img src="/assets/img/projectJoin.svg" alt="picture of Kanbanboard">
-    <div class="projectPreview">
-        <div class="projectTextContainer">
-            <h3>Join</h3>
-            <p>Angular | TypeScript | HTML | CSS | Firebase</p>
-            <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions,
-                assign
-                users
-                and categories.
-            </p>
-        </div>
-        <div class="btnBox">
-            <button>Live test</button>
-            <button>Github</button>
-        </div>
-    </div> -->
-
-
-    <!-- <ng-container *ngFor="let project of projects">
-        <div class="projectContainer">
-            <img src="/assets/img/{{project.image}}">
-            <div class="projectPreview">
-                <div class="projectTextContainer">
-                    <h3>{{project.title}}</h3>
-                    <p>
-                        <ng-container *ngFor="let skill of project.skills; let isLast=last">
-                            {{skill}}{{isLast ? '' : ' | '}}
-                        </ng-container>
-                    </p>
-                    <p>{{project.text}}</p>
-                </div>
-                <div class="btnBox">
-                    <a *ngFor="let link of project.links; let i = index" [href]="link" target="_blank">
-                        {{link.includes('github') ? 'Github' : 'Live test'}}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </ng-container> -->
     <ng-container *ngFor="let project of projects; let i = index">
-        <div class="projectContainer">
+        <div [ngClass]="(i % 2 === 0) ? 'projectContainer' : 'projectContainerReverse'">
             <img src="/assets/img/{{project.image}}">
-            <img *ngIf="(i+1) % 3 === 0" class="projectShadow" src="/assets/img/purpleProjectShadow.svg">
+            <img *ngIf="(i+1) % 3 === 0" class="projectShadow" src="/assets/img/purpleProjectShadow2.svg">
             <div class="projectPreview">
                 <div class="projectTextContainer">
                     <h3>{{project.title}}</h3>

@@ -1,14 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Poppins" !important;
+  box-sizing: border-box;
+}
+
 :root {
-  font-size: min(
-    max(16px, calc(1rem + ((1vw - 3.2px) * 1.4286))),
-    48px
-  ) !important;
+  font-size: clamp(16px, calc(1rem + ((0.4vw - 3.2px) * 1.2)), 48px) !important;
+  // font-size: clamp(16px, 0.5rem + (0.55vw - 3.2px) * 0.3, 48px) !important;
 }
 
 body {
   background-color: #141d2f;
-
+  margin: 0px;
+  padding: 0px;
+  h2 {
+    font-size: calc(3rem + 1vw) !important;
+  }
   //   background: radial-gradient(
   //     102.53% 81.55% at 46.74% 3.94%,
   //     #1a2743 0.37%,
@@ -18,16 +25,35 @@ body {
   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
 }
 
-html,
-body {
-  margin: 0px;
-  padding: 0px;
+html {
   //   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding: 70px;
 }
+// section {
+//   margin-bottom: 10%;
+// }
 
-* {
-  font-family: "Poppins" !important;
-  box-sizing: border-box;
+/* width */
+::-webkit-scrollbar {
+  width: 0.8vw;
+  min-width: 10px;
+  border-radius: 10px;
+  background-color: #00bee8;
+  &:hover {
+    background-color: #4b47ff;
+  }
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #4b47ff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b47ff;
+  border-radius: 10px;
+  &:hover {
+    background: #00bee8;
+  }
 }

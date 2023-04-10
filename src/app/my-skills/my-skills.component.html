@@ -1,15 +1,16 @@
 <section>
-    <div id="mySkills">
-        <div
-            [ngStyle]="{'display': 'flex', 'position': 'relative', 'justify-content': 'end', 'align-items': 'center', 'gap': '3%'}">
+    <div id="mySkills" class="mySkills">
+        <div class="skillsHeadlineContainer">
             <h2>My Skills</h2>
             <hr>
         </div>
-        <p [ngStyle]="{'display': 'flex', 'padding': '1rem', 'text-align': 'end'}">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, sed! Ipsum dicta dignissimos quam nam
-            ullam voluptatem enim odit reiciendis porro repellat, autem optio ea voluptatum hic, corrupti perspiciatis
-            odio.
+        <p>
+            Through my experience and dedication, I have honed my skills in frontend development and successfully
+            delivered various projects with high-quality code.
         </p>
+        <div class="btnContainerDesktop">
+            <a>Get in touch</a>
+        </div>
     </div>
     <div class="skillIconsContainer">
         <div *ngFor="let icon of mobileIconsArray">
@@ -18,7 +19,7 @@
         </div>
     </div>
     <div class="btnContainer">
-        <button>Get in touch</button>
+        <a href="#form">Get in touch</a>
     </div>
     <img [ngStyle]="{'position': 'absolute', 'bottom': '-330px', 'left': '0px'}"
         src="/assets/img/greenShadowMySkills.svg" alt="green Shadow">

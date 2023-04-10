@@ -1,28 +1,30 @@
-<nav>
+<nav class="mainNavbar">
     <mat-toolbar>
-        <span>Kevin Herbst</span>
+        <a href="#">Kevin Herbst</a>
         <span class="example-spacer"></span>
         <div class="desktopNav">
-            <a href="#aboutMe">
-                About me
-            </a>
-            <a href="#mySkills">
-                Skills
-            </a>
-            <a href="#portfolio">
-                Portfolio
-            </a>
-            <a href="#form">
-                Contact
-            </a>
-            <a href="#">
-                Imprint
-            </a>
+            <a href="#aboutMe" [ngClass]="{ active: isActive(0) }">About me</a>
+            <a href="#mySkills" [ngClass]="{ active: isActive(1) }">Skills</a>
+            <a href="#portfolio" [ngClass]="{ active: isActive(2) }">Portfolio</a>
+            <a href="#form" [ngClass]="{ active: isActive(3) }">Contact</a>
+            <a href="#" [ngClass]="{ active: isActive(4) }">Imprint</a>
         </div>
         <div class="mobileNav">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                <img src="/assets/img/menu.svg">
-            </button>
+            <input type="checkbox" class="menyAvPaa" id="menyAvPaa">
+            <label id="burger" class="burger" for="menyAvPaa">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <nav id="meny">
+                <div class="mobileNavLinks">
+                    <a href="#aboutMe">About me</a>
+                    <a href="#mySkills">My skills</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#form">Contact</a>
+                    <a href="#">Imprint</a>
+                </div>
+            </nav>
         </div>
     </mat-toolbar>
 </nav>

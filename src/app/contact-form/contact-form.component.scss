@@ -4,6 +4,25 @@ section {
   }
   position: relative;
   contain: paint;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  @media (width > 991px) {
+    display: flex;
+    flex-direction: unset;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 4rem;
+    #form {
+      width: 40%;
+      min-width: 40%;
+      z-index: 2;
+      margin-bottom: 35%;
+      // padding-left: 1rem;
+    }
+  }
 }
 
 .contactHeadBox {
@@ -19,77 +38,176 @@ section {
     margin: 0;
     border-radius: 0px 2px 2px 0px;
     border: solid #4b47ff;
+    @media (width > 991px) {
+      position: absolute;
+      left: 0;
+      width: 3%;
+    }
   }
 }
 
-.test {
-  background-color: red;
+.contactText {
+  padding: 1rem;
+  span {
+    &:first-child {
+      font-size: 1.55rem;
+    }
+  }
+  @media (width > 991px) {
+    padding: 0;
+  }
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
+  width: 80%;
+  height: 50vh;
+  min-height: 600px;
   position: relative;
   z-index: 2;
+  margin-bottom: 15%;
+  // padding: 1rem;
 
   ::placeholder {
     color: white !important;
   }
 
-  input {
-    padding: 15px 25px;
+  .formInput {
+    height: 20%;
     width: 100%;
-    background: #141d2f;
-    border: 1px solid #4b47ff;
-    border-radius: 10px;
-    &:focus:invalid {
-      outline: none;
-      border-color: red;
+
+    &:nth-last-child(2) {
+      height: 40%;
+      margin-bottom: 5%;
     }
-    &:focus:valid {
-      outline: none;
-      border-color: green;
-    }
-    &:valid {
-      outline: none;
-      border-color: green;
+
+    input {
+      padding: 15px 25px;
+      height: 60%;
+      width: 100%;
+      background: #141d2f;
+      border: 1px solid #4b47ff;
+      border-radius: 10px;
+      font-size: clamp(16px, 1rem + (0.15vw - 3.2px) * 1.2, 48px) !important;
+
+      &:hover {
+        border: 1px solid #00bee8;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.ng-invalid.ng-touched:not(:focus) {
+        border-color: red;
+      }
+
+      &.ng-valid:not(:focus) {
+        border-color: green;
+      }
     }
   }
+
   textarea {
     padding: 15px 25px;
     width: 100%;
-    height: 100px;
+    height: 80%;
     background: #141d2f;
     border: 1px solid #4b47ff;
     border-radius: 10px;
-    &:focus:invalid {
+    font-size: clamp(16px, 1rem + (0.15vw - 3.2px) * 1.2, 48px) !important;
+
+    &:hover {
+      border: 1px solid #00bee8;
+    }
+
+    &:focus {
       outline: none;
+    }
+
+    &.ng-invalid.ng-touched:not(:focus) {
       border-color: red;
     }
-    &:focus:valid {
-      outline: none;
-      border-color: green;
-    }
-    &:valid {
-      outline: none;
+
+    &.ng-valid:not(:focus) {
       border-color: green;
     }
   }
+
   button {
-    background: #00bee8;
+    background: #cccccc;
     border-radius: 10px;
     border: none;
     padding: 15px 30px;
     width: auto;
-    font-size: 1rem;
-    line-height: 120%;
+    font-size: clamp(0.8rem, 1.3vw, 2rem);
+    transition: all 0.3s ease;
+
+    &:enabled {
+      background: #00bee8;
+    }
+    &:hover:enabled {
+      background: #4b47ff;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  div {
+    color: red !important;
+  }
+
+  @media (width > 991px) {
+    width: 45%;
+    height: 55vh;
+    margin-bottom: 0;
+    justify-content: space-evenly;
+    ::placeholder {
+      font-size: clamp(16px, 0.5rem + (0.55vw - 3.2px) * 0.3, 48px);
+    }
+  }
+}
+
+.goUpBtn {
+  position: absolute;
+  bottom: 3%;
+  right: 5%;
+  height: 4%;
+  background-image: url("./../../assets/img/goUpBtn.svg");
+  background-position: center;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover {
+    background-image: url("./../../assets/img/goUpBlue.svg");
+  }
+
+  @media (width <= 400px) {
+    bottom: 2%;
+    right: 2%;
+  }
+
+  @media (width > 991px) {
+    right: 6.3%;
+    bottom: 5%;
+    height: 5%;
+    z-index: 3;
   }
 }
 
 .purpleShadow {
   position: absolute;
-  bottom: -75px;
-  height: 235px;
+  bottom: -15%;
+  height: 45%;
+  width: 100%;
+  left: -31%;
+  @media (width > 991px) {
+    height: 80%;
+    bottom: -30%;
+    left: -37%;
+  }
 }
