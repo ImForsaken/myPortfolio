@@ -11,7 +11,7 @@ export class ProjectComponent {
       title: 'Join',
       skills: ['Javascript', 'HTML', 'CSS', 'Backend'],
       text: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      image: 'projectJoin.svg',
+      image: 'projectJoin.png',
       links: [
         'https://herbst-kevin.de/Join/index.html',
         'https://github.com/ImForsaken/Join-282',
@@ -41,7 +41,7 @@ export class ProjectComponent {
       title: 'Pokedex',
       skills: ['Javscript', 'HTML', 'CSS', 'Rest-Api', 'Chart.js'],
       text: 'Beautiful Pokedex from the famous Pokemon Anime/Game. Search, Learn about your favourite Pokemons from the Pokemon universe!',
-      image: 'projectPokemon.svg',
+      image: 'projectPokedex.png',
       links: [
         'https://herbst-kevin.de/Pokemondex/index.html',
         'https://github.com/ImForsaken/Pokedex',

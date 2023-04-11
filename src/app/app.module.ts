@@ -18,6 +18,8 @@ import { ProjectComponent } from './portfolio/project/project.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImprintComponent } from './imprint/imprint.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProjectComponent,
     FooterComponent,
     ContactFormComponent,
+    ImprintComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

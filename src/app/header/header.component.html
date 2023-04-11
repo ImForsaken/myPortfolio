@@ -2,12 +2,12 @@
     <mat-toolbar>
         <a href="#">Kevin Herbst</a>
         <span class="example-spacer"></span>
-        <div class="desktopNav">
+        <div id="desktopNav" class="desktopNav">
             <a href="#aboutMe" [ngClass]="{ active: isActive(0) }">About me</a>
             <a href="#mySkills" [ngClass]="{ active: isActive(1) }">Skills</a>
             <a href="#portfolio" [ngClass]="{ active: isActive(2) }">Portfolio</a>
             <a href="#form" [ngClass]="{ active: isActive(3) }">Contact</a>
-            <a href="#" [ngClass]="{ active: isActive(4) }">Imprint</a>
+            <a routerLink="/imprint" [ngClass]="{ active: isActive(4) }">Imprint</a>
         </div>
         <div class="mobileNav">
             <input type="checkbox" class="menyAvPaa" id="menyAvPaa">
@@ -22,7 +22,7 @@
                     <a href="#mySkills">My skills</a>
                     <a href="#portfolio">Portfolio</a>
                     <a href="#form">Contact</a>
-                    <a href="#">Imprint</a>
+                    <a routerLink="/imprint">Imprint</a>
                 </div>
             </nav>
         </div>

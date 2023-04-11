@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.imprintContainer {
+  color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  h2 {
+    font-size: calc(1rem + 0.2vw) !important;
+  }
+}

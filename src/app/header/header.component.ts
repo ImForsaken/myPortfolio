@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   activeLinkIndex = -1;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     const navLinks = document.querySelectorAll('.desktopNav a');
@@ -26,6 +27,19 @@ export class HeaderComponent implements OnInit {
         checkBox.checked = false;
       });
     });
+
+    if (this.router.url == '/imprint') {
+      console.log('erfolg');
+      this.activeLinkIndex = 4;
+    } else if (this.router.url == '/#form') {
+      this.activeLinkIndex = 3;
+    } else if (this.router.url == '/#portfolio') {
+      this.activeLinkIndex = 2;
+    } else if (this.router.url == '/#skills') {
+      this.activeLinkIndex = 1;
+    } else if (this.router.url == '/#aboutMe') {
+      this.activeLinkIndex = 0;
+    }
   }
 
   isActive(index: number): boolean {

@@ -13,6 +13,7 @@ body {
   background-color: #141d2f;
   margin: 0px;
   padding: 0px;
+
   h2 {
     font-size: calc(3rem + 1vw) !important;
   }
@@ -40,9 +41,6 @@ html {
   min-width: 10px;
   border-radius: 10px;
   background-color: #00bee8;
-  &:hover {
-    background-color: #4b47ff;
-  }
 }
 
 ::-webkit-scrollbar-track {
@@ -54,6 +52,6 @@ html {
   background: #4b47ff;
   border-radius: 10px;
   &:hover {
-    background: #00bee8;
+    background: #3c39fc;
   }
 }
