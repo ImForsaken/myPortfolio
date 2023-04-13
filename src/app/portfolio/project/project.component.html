@@ -11,7 +11,8 @@
                             {{skill}}{{isLast ? '' : ' | '}}
                         </ng-container>
                     </p>
-                    <p>{{project.text}}</p>
+                    <p [ngStyle]="{'word-break': 'break-word'}">{{language === 'en' ? project.text[0] :
+                        project.text[1]}}</p>
                 </div>
                 <div class="btnBox">
                     <a *ngFor="let link of project.links; let i = index" [href]="link" target="_blank">

@@ -53,7 +53,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: clamp(1.5rem, 6.8vw, 3.5rem);
+  font-size: clamp(1.5rem, 6.8vw, 3.75rem);
   line-height: 120%;
   transform: rotate(180deg) translate(12%, 14%);
   writing-mode: vertical-rl;
@@ -80,11 +80,18 @@
     }
     &:nth-child(2) {
       color: #4b47ff;
-      font-size: clamp(1.45rem, 6.58vw, 3.4rem);
+      font-size: clamp(1.45rem, 6.58vw, 3.62rem);
       line-height: 120%;
       @media (width > 991px) {
         font-size: clamp(0.8rem, 4.09vw, 6.57rem);
       }
     }
+  }
+}
+
+.de-font-size {
+  font-size: clamp(1.38rem, 6.23vw, 3.43rem) !important;
+  @media (width > 991px) {
+    font-size: clamp(0.8rem, 3.87vw, 6.57rem) !important;
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,19 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(public router: Router) {}
+
   title = 'testAngularPortfolio';
+
+  imprintRoute = false;
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.imprintRoute = event.url.includes('/imprint');
+        if (event.url == '/imprint') {
+          console.log('works', this.imprintRoute);
+        }
+      }
+    });
+  }
 }

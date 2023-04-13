@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Navigation, Router } from '@angular/router';
+import { NavigationService } from '../navigation.service';
+import { TranslateService } from '@ngx-translate/core';
+import { DataService } from '../data-service.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +11,31 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   activeLinkIndex = -1;
+  language: string = 'en';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public navigation: NavigationService,
+    public translate: TranslateService,
+    public dataService: DataService
+  ) {}
 
   ngOnInit(): void {
+    this.dataService.currentLanguage.subscribe((language) => {
+      this.language = language;
+    });
+
     const navLinks = document.querySelectorAll('.desktopNav a');
     const mobileLinks = document.querySelectorAll('.mobileNavLinks a');
     const checkBox = document.getElementById('menyAvPaa') as HTMLInputElement;
+
+    checkBox.addEventListener('click', () => {
+      if (checkBox.checked) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'unset';
+      }
+    });
 
     navLinks.forEach((link, index) => {
       link.addEventListener('click', () => {
@@ -27,19 +48,6 @@ export class HeaderComponent implements OnInit {
         checkBox.checked = false;
       });
     });
-
-    if (this.router.url == '/imprint') {
-      console.log('erfolg');
-      this.activeLinkIndex = 4;
-    } else if (this.router.url == '/#form') {
-      this.activeLinkIndex = 3;
-    } else if (this.router.url == '/#portfolio') {
-      this.activeLinkIndex = 2;
-    } else if (this.router.url == '/#skills') {
-      this.activeLinkIndex = 1;
-    } else if (this.router.url == '/#aboutMe') {
-      this.activeLinkIndex = 0;
-    }
   }
 
   isActive(index: number): boolean {

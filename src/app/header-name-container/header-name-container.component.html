@@ -1,10 +1,10 @@
 <div class="headerNameContainer">
     <div class="headerNameBox">
-        <span class="iAmBox">I am</span>
+        <span translate class="iAmBox">I am</span>
         <div class="khFrontEnd">
             <span>KEVIN HERBST</span>
-            <span>FRONTEND DEVELOPER</span>
+            <span translate id="dev" [ngClass]="{'de-font-size': this.language === 'de'}">FRONTEND DEVELOPER</span>
         </div>
     </div>
-    <a href="#form" class="letsTalkBtn">Let´s talk!</a>
+    <a translate href="#form" class="letsTalkBtn">Let´s talk!</a>
 </div>
