@@ -1,8 +1,10 @@
 <section>
     <ng-container *ngFor="let project of projects; let i = index">
-        <div [ngClass]="(i % 2 === 0) ? 'projectContainer' : 'projectContainerReverse'">
-            <img src="/assets/img/{{project.image}}">
-            <img *ngIf="(i+1) % 3 === 0" class="projectShadow" src="/assets/img/purpleProjectShadow2.svg">
+        <div [attr.data-aos]="i % 2 == 0 ? 'fade-down' : 'fade-up'" data-aos-offset="150" data-aos-delay="550"
+            data-aos-duration="800" data-aos-easing="linear"
+            [ngClass]="(i % 2 === 0) ? 'projectContainer' : 'projectContainerReverse'">
+            <img data-aos="flip-up" data-aos-delay="750" data-aos-duration="2000" src="./assets/img/{{project.image}}">
+            <img *ngIf="(i+1) % 3 === 0" class="projectShadow" src="./assets/img/purpleProjectShadow2.svg">
             <div class="projectPreview">
                 <div class="projectTextContainer">
                     <h3>{{project.title}}</h3>

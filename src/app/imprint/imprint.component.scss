@@ -19,7 +19,7 @@
   h2 {
     font-size: calc(1rem + 0.2vw) !important;
   }
-  @media (width <= 520px) {
+  @media screen and (max-width: 520px) {
     text-align: center;
   }
 }

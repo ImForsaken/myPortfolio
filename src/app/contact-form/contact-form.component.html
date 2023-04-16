@@ -1,10 +1,11 @@
 <section>
     <div id="form">
         <div class="contactHeadBox">
-            <hr>
-            <h2 translate>Contact</h2>
+            <hr data-aos="fade-right" data-aos-delay="850" data-aos-duration="750">
+            <h2 data-aos="fade-left" data-aos-delay="550" data-aos-duration="550" translate>
+                Contact</h2>
         </div>
-        <div class="contactText">
+        <div class="contactText" data-aos="flip-left" data-aos-delay="550" data-aos-duration="750">
             <span><b translate>Got a problem to solve?</b></span>
             <br>
             <br>
@@ -16,29 +17,40 @@
     </div>
     <form [formGroup]="contactForm" (ngSubmit)="sendMail()" #myForm>
         <div class="formInput">
-            <input placeholder="Your name" type="text" name="name" id="name" formControlName="name" #nameField>
+            <input data-aos="flip-up" data-aos-delay="650" data-aos-duration="850"
+                [placeholder]="this.language === 'en' ? 'Your Name' : 'Ihren Name'" type="text" name="name" id="name"
+                formControlName="name" #nameField>
             <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
                 <div *ngIf="name?.errors?.['required']" translate>Name is required</div>
             </div>
         </div>
         <div class="formInput">
-            <input placeholder="Your email" type="email" pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$"
-                name="email" id="email" formControlName="email" #emailField>
+            <input data-aos="flip-down" data-aos-delay="800" data-aos-duration="750"
+                [placeholder]="this.language === 'en' ? 'Your Email' : 'Ihre E-Mail-Adresse'" type="email"
+                pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$" name="email" id="email" formControlName="email"
+                #emailField>
             <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
                 <div *ngIf="email?.errors?.['required']" translate>Email is required</div>
                 <div *ngIf="email?.errors?.['pattern'] || email?.errors?.['email']" translate>Invalid email format</div>
             </div>
         </div>
-        <div class="formInput">
-            <textarea placeholder="Your message to me" type="text" name="message" id="message" formControlName="message"
+        <div class="formTextarea">
+            <textarea data-aos="flip-up" data-aos-delay="1000" data-aos-duration="750"
+                [placeholder]="this.language === 'en' ? 'Your Message to Me' : 'Ihre Nachricht an mich'"
+                placeholder="Your message to me" type="text" name="message" id="message" formControlName="message"
                 #messageField></textarea>
             <div *ngIf="message?.invalid && (message?.dirty || message?.touched)">
                 <div *ngIf="message?.errors?.['required']" translate>Message is required</div>
             </div>
         </div>
-        <button type="submit" [disabled]="!contactForm.valid" #sendButton translate>Send message :)</button>
+        <div data-aos="fade-left" data-aos-delay="1450" data-aos-duration="750">
+            <button type="submit" [disabled]="!contactForm.valid" #sendButton translate>Send message :)</button>
+        </div>
+        <div #success id="successEmail" class="successEmail">
+            <p translate>Email sent</p>
+        </div>
     </form>
-    <img class="purpleShadow" src="/assets/img/purpleContactShadow.svg" alt="purple shadow">
+    <img class="purpleShadow" src="./assets/img/purpleContactShadow.svg" alt="purple shadow">
     <a class="goUpBtn" href="#">
     </a>
 </section>

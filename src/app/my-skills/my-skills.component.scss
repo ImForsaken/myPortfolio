@@ -7,10 +7,11 @@ section {
   position: relative;
   margin-bottom: 10%;
 
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     flex-direction: row-reverse;
     gap: 0;
     text-align: center !important;
+    padding-top: 100px; /* Add padding to keep content below the navigation */
   }
 }
 
@@ -27,9 +28,16 @@ section {
     border: solid #4b47ff;
     margin: 0;
     border-radius: 4px 0px 0px 4px;
+    &[data-aos="fade-left"] {
+      transform: translate3d(150px, 0, 0);
+    }
+    &[data-aos^="fade"][data-aos^="fade"].aos-animate {
+      opacity: 1;
+      transform: translateZ(0);
+    }
   }
 
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     gap: 0;
     position: unset;
     justify-content: center;
@@ -42,12 +50,13 @@ section {
 }
 
 .mySkills {
+  overflow: hidden;
   p {
     display: flex;
     padding: 1rem;
     text-align: end;
   }
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -62,7 +71,7 @@ section {
 
 .btnContainerDesktop {
   display: none;
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,6 +103,8 @@ section {
   gap: 30px;
   padding: 1rem;
   z-index: 1;
+  overflow: hidden;
+
   div {
     display: flex;
     flex-direction: column;
@@ -120,13 +131,13 @@ section {
       animation-timing-function: ease;
     }
 
-    @media (width <= 340px) {
+    @media screen and (max-width: 340px) {
       height: 40px;
       width: 40px;
     }
   }
 
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     width: 50%;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 60px;
@@ -184,7 +195,22 @@ section {
       transform: scale(1.1);
     }
   }
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     display: none;
+  }
+}
+
+.iconBox {
+  @media (min-width: 992px) {
+    &[data-aos="zoom-out-right"] {
+      transform: translate3d(-300px, 350px, 150px) scale(1.2);
+    }
+    &[data-aos="zoom-out-left"] {
+      transform: translate3d(300px, -350px, -150px) scale(1.2);
+    }
+    &[data-aos^="zoom"][data-aos^="zoom"].aos-animate {
+      opacity: 1;
+      transform: translateZ(0) scale(1) translate3d(0, 0, 0);
+    }
   }
 }

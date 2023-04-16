@@ -15,7 +15,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     flex-direction: unset;
     justify-content: space-between;
     padding: 1rem 4rem;
@@ -31,7 +31,7 @@ footer {
   font-size: 1.2rem;
   position: absolute;
   bottom: 15%;
-  @media (width <= 991px) {
+  @media screen and (max-width: 991px) {
     display: none;
   }
 }
@@ -40,7 +40,7 @@ footer {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     display: none;
   }
 }
@@ -62,17 +62,17 @@ footer {
     img {
       height: 40px;
 
-      @media (width <= 430px) {
+      @media screen and (max-width: 430px) {
         height: 35px;
       }
 
-      @media (width > 991px) {
+      @media (min-width: 992px) {
         min-height: 45px;
         height: 2.8vw;
       }
     }
   }
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     width: 20%;
     margin-bottom: 0;
   }

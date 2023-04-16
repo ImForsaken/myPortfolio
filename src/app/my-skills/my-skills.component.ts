@@ -8,15 +8,15 @@ import { Component } from '@angular/core';
 export class MySkillsComponent {
   mobileIconsArray = [
     { name: 'Angular', icon: 'angularIcon' },
-    { name: 'Typescript', icon: 'typescriptIcon' },
-    { name: 'Javascript', icon: 'javascriptIcon' },
+    { name: 'TypeScript ', icon: 'typescriptIcon' },
+    { name: 'JavaScript', icon: 'javascriptIcon' },
     { name: 'HTML', icon: 'htmlIcon' },
     { name: 'Firebase', icon: 'firebaseIcon' },
     { name: 'GIT', icon: 'gitIcon' },
     { name: 'CSS', icon: 'cssIcon' },
-    { name: 'Material design', icon: 'materialDesignIcon' },
+    { name: 'Material Design', icon: 'materialDesignIcon' },
     { name: 'Rest-Api', icon: 'apiIcon' },
     { name: 'Scrum', icon: 'scrumIcon' },
-    { name: 'Wordpress', icon: 'wordpressIcon' },
+    { name: 'WordPress', icon: 'wordpressIcon' },
   ];
 }

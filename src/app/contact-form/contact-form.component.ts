@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { DataService } from '../data-service.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -12,11 +13,20 @@ import {
   styleUrls: ['./contact-form.component.scss'],
 })
 export class ContactFormComponent {
+  contactForm!: FormGroup;
+  language: string = 'en';
+
   @ViewChild('myForm') myForm!: ElementRef;
   @ViewChild('nameField') nameField!: ElementRef;
   @ViewChild('emailField') emailField!: ElementRef;
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
+  @ViewChild('success') success!: ElementRef;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    public dataService: DataService
+  ) {}
 
   async sendMail() {
     // action="https://herbst-kevin.de/send_mail.php"
@@ -25,22 +35,19 @@ export class ContactFormComponent {
     let emailField = this.emailField.nativeElement;
     let messageField = this.messageField.nativeElement;
     let sendButton = this.sendButton.nativeElement;
+    let success = this.success.nativeElement;
 
     nameField.disabled = true;
     emailField.disabled = true;
     messageField.disabled = true;
     sendButton.disabled = true;
-    //Animation für absenden der Daten
+    sendButton.style.display = 'none';
+    success!.style.display = 'unset';
 
-    let fd = new FormData();
-    fd.append('name', nameField.value);
-    fd.append('email', emailField.value);
-    fd.append('message', messageField.value);
-
-    // senden
     await fetch('https://herbst-kevin.de/send_mail.php', {
       method: 'POST',
-      body: fd,
+      body: new URLSearchParams(this.contactForm.value).toString(),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     });
 
     //texte anzeigen nachricht gesendet
@@ -49,13 +56,17 @@ export class ContactFormComponent {
     messageField.disabled = false;
     sendButton.disabled = false;
     this.contactForm.reset();
+    setTimeout(() => {
+      success!.style.display = 'none';
+      sendButton.style.display = 'unset';
+    }, 2300);
   }
 
-  contactForm!: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {}
-
   ngOnInit(): void {
+    this.dataService.currentLanguage.subscribe((language) => {
+      this.language = language;
+    });
+
     this.contactForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: [
@@ -80,9 +91,5 @@ export class ContactFormComponent {
 
   get message() {
     return this.contactForm.get('message') as FormControl;
-  }
-
-  submitForm() {
-    console.log(this.contactForm.value);
   }
 }

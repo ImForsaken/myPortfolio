@@ -7,8 +7,9 @@
   flex-direction: column;
   align-items: center;
   padding: 0.6rem 1rem;
+  overflow: hidden;
 
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     position: absolute;
     top: 15%;
     right: 4rem;
@@ -34,10 +35,10 @@
       background: #4b47ff;
       transform: scale(1.1);
     }
-    @media (width > 991px) {
+    @media (min-width: 992px) {
       font-size: clamp(1rem, 2vw, 2rem);
     }
-    @media (width <= 360px) {
+    @media screen and (max-width: 360px) {
       padding: 10px 20px;
     }
   }
@@ -57,9 +58,21 @@
   line-height: 120%;
   transform: rotate(180deg) translate(12%, 14%);
   writing-mode: vertical-rl;
-  @media (width > 991px) {
+
+  &[data-aos="fade-up"] {
+    transform: translate3d(0, 0, 0) translateY(-500px) rotate(180deg);
+  }
+  &.aos-animate {
+    transform: translateY(0px) translate3d(0, 0, 0) translateZ(0) rotate(180deg)
+      translate(12%, 14%) !important;
+  }
+
+  @media (min-width: 992px) {
     font-size: clamp(0.5rem, 4.65vw, 6rem);
-    transform: rotate(180deg) translate(10%, 6%);
+    &.aos-animate {
+      transform: translateY(0px) translate3d(0, 0, 0) translateZ(0)
+        rotate(180deg) translate(10%, 6.5%) !important;
+    }
   }
 }
 
@@ -74,7 +87,7 @@
       font-weight: 700;
       font-size: clamp(2.2rem, 10vw, 5.5rem);
       line-height: 120%;
-      @media (width > 991px) {
+      @media (min-width: 992px) {
         font-size: clamp(2.22rem, 6.2vw, 10rem);
       }
     }
@@ -82,7 +95,7 @@
       color: #4b47ff;
       font-size: clamp(1.45rem, 6.58vw, 3.62rem);
       line-height: 120%;
-      @media (width > 991px) {
+      @media (min-width: 992px) {
         font-size: clamp(0.8rem, 4.09vw, 6.57rem);
       }
     }
@@ -91,7 +104,7 @@
 
 .de-font-size {
   font-size: clamp(1.38rem, 6.23vw, 3.43rem) !important;
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     font-size: clamp(0.8rem, 3.87vw, 6.57rem) !important;
   }
 }

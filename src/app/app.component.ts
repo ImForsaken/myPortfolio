@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewInit {
   constructor(public router: Router) {}
 
-  title = 'testAngularPortfolio';
+  title = 'Portfolio';
 
   imprintRoute = false;
+
+  ngAfterViewInit() {
+    AOS.init();
+  }
 
   ngOnInit() {
     this.router.events.subscribe((event) => {

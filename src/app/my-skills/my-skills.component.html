@@ -1,8 +1,8 @@
-<section>
-    <div id="mySkills" class="mySkills">
+<section id="mySkills">
+    <div class="mySkills">
         <div class="skillsHeadlineContainer">
             <h2 translate>My Skills</h2>
-            <hr>
+            <hr data-aos="fade-left" data-aos-delay="650" data-aos-duration="650">
         </div>
         <p translate>
             Through my experience and dedication, I have honed my skills in frontend development and successfully
@@ -13,14 +13,16 @@
         </div>
     </div>
     <div class="skillIconsContainer">
-        <div *ngFor="let icon of mobileIconsArray">
-            <img src="/assets/img/{{ icon.icon }}.svg">
+        <div class="iconBox" *ngFor="let icon of mobileIconsArray; let i=index" data-aos-offset="200"
+            [attr.data-aos]="i % 2 == 0 ? 'zoom-out-right' : 'zoom-out-left'" data-aos-delay="600"
+            data-aos-duration="950">
+            <img src="./assets/img/{{ icon.icon }}.svg">
             <p>{{ icon.name }}</p>
         </div>
     </div>
     <div class="btnContainer">
         <a translate href="#form">Get in touch</a>
     </div>
-    <img [ngStyle]="{'position': 'absolute', 'bottom': '-330px', 'left': '0px'}"
-        src="/assets/img/greenShadowMySkills.svg" alt="green Shadow">
+    <img [ngStyle]="{'position': 'absolute', 'bottom': '-330px', 'left': '0px', 'filter': 'blur(20px)'}"
+        src="./assets/img/greenShadowMySkills.svg" alt="green Shadow">
 </section>

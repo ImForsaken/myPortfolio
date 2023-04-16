@@ -27,17 +27,22 @@ section {
   margin-left: auto;
   z-index: 1;
   position: relative;
-  // h2 {
-  //   font-size: 3rem;
-  // }
-
+  overflow: hidden;
   hr {
     background-color: #4b47ff;
     width: 10%;
     border: solid #4b47ff;
     margin: 0;
     border-radius: 4px 0px 0px 4px;
-    // border-top-left-radius: 4px;
+    &:first-child {
+      &[data-aos="fade-left"] {
+        transform: translate3d(30px, 0, 0);
+      }
+      &[data-aos^="fade"][data-aos^="fade"].aos-animate {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
     &:nth-child(3) {
       width: 35%;
       border-radius: 0;

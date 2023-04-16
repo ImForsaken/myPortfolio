@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       if (checkBox.checked) {
         document.body.style.overflow = 'hidden';
       } else {
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = '';
       }
     });
 
@@ -46,6 +46,7 @@ export class HeaderComponent implements OnInit {
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
         checkBox.checked = false;
+        document.body.style.overflow = '';
       });
     });
   }

@@ -11,7 +11,7 @@
       color: #00bee8;
     }
   }
-  @media (width > 991px) {
+  @media (min-width: 992px) {
     height: 100px;
   }
 }
@@ -24,7 +24,7 @@ mat-toolbar {
     color: white;
   }
   font: unset;
-  @media (width >991px) {
+  @media (min-width: 992px) {
     font-size: clamp(16px, calc(1rem + ((0.44vw - 3.2px) * 1.2)), 48px);
     padding: 1rem 4rem;
   }
@@ -36,7 +36,7 @@ mat-toolbar {
 
 .mobileNav {
   display: none !important;
-  @media (width <= 991px) {
+  @media screen and (max-width: 991px) {
     display: block !important;
   }
 }
@@ -51,7 +51,9 @@ mat-toolbar {
     a {
       text-decoration: none;
       position: relative;
-
+      &:hover {
+        cursor: pointer;
+      }
       &:after {
         content: "";
         display: block;
@@ -87,11 +89,17 @@ mat-toolbar {
 
 .flag {
   height: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.menyAvPaa {
+#menyAvPaa {
   display: none;
 
+  &:checked ~ #meny {
+    transform: translateX(0rem);
+  }
   &:checked ~ .burger > div {
     background-color: #fff;
   }
@@ -168,28 +176,8 @@ mat-toolbar {
       }
       &:hover {
         color: #00bee8;
+        cursor: pointer;
       }
     }
   }
 }
-
-#menyAvPaa {
-  display: none;
-  &:checked ~ #meny {
-    transform: translateX(0rem);
-  }
-}
-
-//Volles HTML beispiel dazu
-// <header>
-//     <input type="checkbox" id="menyAvPaa">
-//     <label id="burger" for="menyAvPaa">
-//         <div></div>
-//         <div></div>
-//         <div></div>
-//     </label>
-//   <nav id="meny">
-//   </nav>
-// </header>
-// <main>
-// </main>

@@ -10,14 +10,14 @@
             <a translate (click)="navigation.forceNavigate('form')" [ngClass]="{ active: isActive(3) }">Contact</a>
             <a translate routerLink="/imprint" [ngClass]="{ active: isActive(4) }">Imprint</a>
             <img class="flag" *ngIf="language === 'en'"
-                (click)="translate.use('de'); this.dataService.setLanguage('de')" src="/assets/img/germanFlag.svg"
+                (click)="translate.use('de'); this.dataService.setLanguage('de')" src="./assets/img/germanFlag.svg"
                 alt="translate german button">
             <img class="flag" *ngIf="language === 'de'"
-                (click)="translate.use('en'); this.dataService.setLanguage('en')" src="/assets/img/englishFlag.svg"
+                (click)="translate.use('en'); this.dataService.setLanguage('en')" src="./assets/img/englishFlag.svg"
                 alt="translate english button">
         </div>
         <div class="mobileNav">
-            <input type="checkbox" class="menyAvPaa" id="menyAvPaa">
+            <input type="checkbox" id="menyAvPaa">
             <label id="burger" class="burger" for="menyAvPaa">
                 <div></div>
                 <div></div>
@@ -33,10 +33,10 @@
                     <div class="flagContainer">
                         <img class="flag" *ngIf="language === 'en'"
                             (click)="translate.use('de'); this.dataService.setLanguage('de')"
-                            src="/assets/img/germanFlag.svg" alt="translate german button">
+                            src="./assets/img/germanFlag.svg" alt="translate german button">
                         <img class="flag" *ngIf="language === 'de'"
                             (click)="translate.use('en'); this.dataService.setLanguage('en')"
-                            src="/assets/img/englishFlag.svg" alt="translate english button">
+                            src="./assets/img/englishFlag.svg" alt="translate english button">
                     </div>
                 </div>
             </nav>
