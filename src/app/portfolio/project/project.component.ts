@@ -40,7 +40,7 @@ export class ProjectComponent {
       ],
       image: 'projectROF.png',
       links: [
-        'https://herbst-kevin.de/ringoffire/',
+        'https://ring-of-fire.herbst-kevin.de/',
         'https://github.com/ImForsaken/Ring-of-Fire',
       ],
     },
