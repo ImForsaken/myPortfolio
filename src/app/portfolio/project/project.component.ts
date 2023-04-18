@@ -51,7 +51,7 @@ export class ProjectComponent {
         'Object orientated 2d jump and run game with unuiqe style and humour',
         'Objektorientiertes 2D-Jump-and-Run-Spiel mit einzigartigem Stil und Humor.',
       ],
-      image: 'projectEPL.svg',
+      image: 'projectEPL.png',
       links: [
         'https://herbst-kevin.de/El%20pollo%20loco/index.html',
         'https://github.com/ImForsaken/El-pollo-loco',
@@ -77,7 +77,7 @@ export class ProjectComponent {
         'Relationship Management system working with CRUD functionality.',
         'Kundenbeziehungsmanagement-System mit CRUD-Funktionalität.',
       ],
-      image: 'projectCrm.svg',
+      image: 'projectCrm.png',
       links: ['https://herbst-kevin.de', 'https://github.com/ImForsaken'],
     },
   ];

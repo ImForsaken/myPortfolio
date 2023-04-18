@@ -25,10 +25,14 @@ export class HeaderComponent implements OnInit {
       this.language = language;
     });
 
-    const navLinks = document.querySelectorAll('.desktopNav a');
-    const mobileLinks = document.querySelectorAll('.mobileNavLinks a');
     const checkBox = document.getElementById('menyAvPaa') as HTMLInputElement;
 
+    this.checkBoxEvent(checkBox);
+    this.navLinksEvent();
+    this.mobileNavLinksEvent(checkBox);
+  }
+
+  checkBoxEvent(checkBox: HTMLInputElement) {
     checkBox.addEventListener('click', () => {
       if (checkBox.checked) {
         document.body.style.overflow = 'hidden';
@@ -36,13 +40,19 @@ export class HeaderComponent implements OnInit {
         document.body.style.overflow = '';
       }
     });
+  }
 
+  navLinksEvent() {
+    const navLinks = document.querySelectorAll('.desktopNav a');
     navLinks.forEach((link, index) => {
       link.addEventListener('click', () => {
         this.activeLinkIndex = index;
       });
     });
+  }
 
+  mobileNavLinksEvent(checkBox: HTMLInputElement) {
+    const mobileLinks = document.querySelectorAll('.mobileNavLinks a');
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
         checkBox.checked = false;

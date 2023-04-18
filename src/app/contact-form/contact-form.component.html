@@ -1,8 +1,8 @@
 <section>
     <div id="form">
         <div class="contactHeadBox">
-            <hr data-aos="fade-right" data-aos-delay="850" data-aos-duration="750">
-            <h2 data-aos="fade-left" data-aos-delay="550" data-aos-duration="550" translate>
+            <hr data-aos="fade-right" data-aos-delay="550" data-aos-duration="550">
+            <h2 data-aos="fade-left" data-aos-delay="250" data-aos-duration="550" translate>
                 Contact</h2>
         </div>
         <div class="contactText" data-aos="flip-left" data-aos-delay="550" data-aos-duration="750">
@@ -12,21 +12,22 @@
             <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and
                 contributing to your
                 projects with my work.</p>
-            <span translate>Need a Frontend developer? <b translate>Contact me!</b></span>
+            <span translate>Need a Frontend developer? <b translate>Contact me!</b></span><br>
+            <br>
+            <span>contact@herbst-kevin.de</span>
         </div>
     </div>
+    <img src="./assets/img/contactImage.png" alt="Admin contact image" class="contactImage">
     <form [formGroup]="contactForm" (ngSubmit)="sendMail()" #myForm>
-        <div class="formInput">
-            <input data-aos="flip-up" data-aos-delay="650" data-aos-duration="850"
-                [placeholder]="this.language === 'en' ? 'Your Name' : 'Ihren Name'" type="text" name="name" id="name"
+        <div class="formInput" data-aos="flip-up" data-aos-delay="300" data-aos-duration="650">
+            <input [placeholder]="this.language === 'en' ? 'Your Name' : 'Ihren Name'" type="text" name="name" id="name"
                 formControlName="name" #nameField>
             <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
                 <div *ngIf="name?.errors?.['required']" translate>Name is required</div>
             </div>
         </div>
-        <div class="formInput">
-            <input data-aos="flip-down" data-aos-delay="800" data-aos-duration="750"
-                [placeholder]="this.language === 'en' ? 'Your Email' : 'Ihre E-Mail-Adresse'" type="email"
+        <div class="formInput" data-aos="flip-down" data-aos-delay="400" data-aos-duration="650">
+            <input [placeholder]="this.language === 'en' ? 'Your Email' : 'Ihre E-Mail-Adresse'" type="email"
                 pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$" name="email" id="email" formControlName="email"
                 #emailField>
             <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
@@ -34,16 +35,15 @@
                 <div *ngIf="email?.errors?.['pattern'] || email?.errors?.['email']" translate>Invalid email format</div>
             </div>
         </div>
-        <div class="formTextarea">
-            <textarea data-aos="flip-up" data-aos-delay="1000" data-aos-duration="750"
-                [placeholder]="this.language === 'en' ? 'Your Message to Me' : 'Ihre Nachricht an mich'"
+        <div class="formTextarea" data-aos="flip-up" data-aos-delay="450" data-aos-duration="450">
+            <textarea [placeholder]="this.language === 'en' ? 'Your Message to Me' : 'Ihre Nachricht an mich'"
                 placeholder="Your message to me" type="text" name="message" id="message" formControlName="message"
                 #messageField></textarea>
             <div *ngIf="message?.invalid && (message?.dirty || message?.touched)">
                 <div *ngIf="message?.errors?.['required']" translate>Message is required</div>
             </div>
         </div>
-        <div data-aos="fade-left" data-aos-delay="1450" data-aos-duration="750">
+        <div data-aos="fade-left" data-aos-delay="600" data-aos-duration="350" data-aos-offset="-200">
             <button type="submit" [disabled]="!contactForm.valid" #sendButton translate>Send message :)</button>
         </div>
         <div #success id="successEmail" class="successEmail">

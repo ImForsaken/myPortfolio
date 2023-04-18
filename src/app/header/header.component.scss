@@ -5,6 +5,8 @@
   right: 0;
   z-index: 5;
   height: 64px;
+  box-shadow: #00000040 0 4px 4px;
+
   a {
     text-decoration: none;
     &:hover {
@@ -32,6 +34,15 @@ mat-toolbar {
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  img {
+    height: 100%;
+  }
 }
 
 .mobileNav {
@@ -89,8 +100,12 @@ mat-toolbar {
 
 .flag {
   height: 30px;
+  aspect-ratio: 1;
   &:hover {
     cursor: pointer;
+  }
+  @media (min-width: 992px) {
+    height: 40px;
   }
 }
 

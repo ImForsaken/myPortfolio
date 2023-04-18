@@ -27,9 +27,8 @@ section {
 
   @media (min-width: 992px) {
     flex-direction: row;
-    margin-bottom: 5%;
+    margin-bottom: 0;
     justify-content: space-between;
-    gap: 15%;
     img {
       width: 40%;
     }
@@ -53,9 +52,8 @@ section {
 
   @media (min-width: 992px) {
     flex-direction: row-reverse;
-    margin-bottom: 7%;
     justify-content: space-between;
-    gap: 15%;
+    margin-bottom: 0;
     * {
       text-align: end;
     }

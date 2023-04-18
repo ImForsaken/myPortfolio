@@ -92,7 +92,12 @@
       }
     }
     &:nth-child(2) {
-      color: #4b47ff;
+      background: #00bee8;
+      background-clip: unset;
+      background: linear-gradient(to right, #00bee8 0%, #4b47ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
       font-size: clamp(1.45rem, 6.58vw, 3.62rem);
       line-height: 120%;
       @media (min-width: 992px) {

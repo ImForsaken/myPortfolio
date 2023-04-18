@@ -2,10 +2,17 @@
 * {
   font-family: "Poppins" !important;
   box-sizing: border-box;
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
 }
 
 :root {
-  font-size: clamp(16px, calc(1rem + ((0.4vw - 3.2px) * 1.2)), 48px) !important;
+  font-size: clamp(16px, calc(1rem + ((0.3vw - 3.2px) * 1.2)), 48px) !important;
 }
 
 app-root {
@@ -18,6 +25,7 @@ body {
   background-color: #141d2f;
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 
   h2 {
     font-size: calc(3rem + 1vw) !important;
@@ -27,6 +35,7 @@ body {
 html {
   scroll-behavior: smooth;
   scroll-padding: 70px;
+  overflow-x: hidden;
 }
 
 /* width */
@@ -48,4 +57,19 @@ html {
   &:hover {
     background: #3c39fc;
   }
+}
+[data-aos="flip-left"].aos-animate {
+  transform: perspective(none) rotateY(0) !important;
+}
+
+[data-aos="flip-right"].aos-animate {
+  transform: perspective(none) rotateY(0) !important;
+}
+
+[data-aos="flip-up"].aos-animate {
+  transform: perspective(none) rotateX(0) !important;
+}
+
+[data-aos="flip-down"].aos-animate {
+  transform: perspective(none) rotateX(0) !important;
 }

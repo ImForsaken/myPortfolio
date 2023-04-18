@@ -10,9 +10,7 @@ export class NavigationService {
   forceNavigate(name: string) {
     this.router
       .navigate(['/'], { fragment: name })
-      .then((result) => {
-        console.log('result: ', result);
-      })
+      .then((result) => {})
       .catch((error) => {
         console.error(error);
       });

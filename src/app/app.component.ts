@@ -15,16 +15,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   imprintRoute = false;
 
   ngAfterViewInit() {
-    AOS.init();
+    window.onload = () => {
+      AOS.init({ once: true });
+      // AOS.init();
+    };
   }
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.imprintRoute = event.url.includes('/imprint');
-        if (event.url == '/imprint') {
-          console.log('works', this.imprintRoute);
-        }
       }
     });
   }

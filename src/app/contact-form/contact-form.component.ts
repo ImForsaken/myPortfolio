@@ -29,8 +29,6 @@ export class ContactFormComponent {
   ) {}
 
   async sendMail() {
-    // action="https://herbst-kevin.de/send_mail.php"
-    console.log('sending mail', this.myForm);
     let nameField = this.nameField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let messageField = this.messageField.nativeElement;

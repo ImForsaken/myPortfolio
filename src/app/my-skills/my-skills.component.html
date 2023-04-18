@@ -13,10 +13,10 @@
         </div>
     </div>
     <div class="skillIconsContainer">
-        <div class="iconBox" *ngFor="let icon of mobileIconsArray; let i=index" data-aos-offset="200"
+        <div class="iconBox" *ngFor="let icon of mobileIconsArray; let i=index" data-aos-offset="100"
             [attr.data-aos]="i % 2 == 0 ? 'zoom-out-right' : 'zoom-out-left'" data-aos-delay="600"
             data-aos-duration="950">
-            <img src="./assets/img/{{ icon.icon }}.svg">
+            <img src="./assets/img/{{ icon.icon }}.svg" alt="{{ icon.name }} icon">
             <p>{{ icon.name }}</p>
         </div>
     </div>

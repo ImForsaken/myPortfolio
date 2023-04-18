@@ -1,12 +1,1 @@
-<svg width="330" height="574" viewBox="0 0 330 574" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_382_3959)">
-<path d="M-22.5051 244.471C19.9567 161.069 46.83 132.181 54.9589 128.163C54.9589 128.163 81.1389 45.5406 103.015 134.9C124.892 224.259 210.963 98.3761 210.963 98.3761L236.067 244.471L138.146 297.567L236.067 329.93L190.88 480.281L35.9515 352.979L138.146 297.567L-22.5051 244.471Z" fill="#4B47FF"/>
-</g>
-<defs>
-<filter id="filter0_f_382_3959" x="-115.505" y="0.359375" width="444.572" height="572.921" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="46.5" result="effect1_foregroundBlur_382_3959"/>
-</filter>
-</defs>
-</svg>
+<svg width="330" height="574" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#a)"><path d="M-22.505 244.471c42.462-83.402 69.335-112.29 77.464-116.308 0 0 26.18-82.622 48.056 6.737 21.877 89.359 107.948-36.524 107.948-36.524l25.104 146.095-97.921 53.096 97.921 32.363-45.187 150.351L35.952 352.979l102.194-55.412-160.651-53.096Z" fill="#4B47FF"/></g><defs><filter id="a" x="-115.505" y=".359" width="444.572" height="572.921" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="46.5" result="effect1_foregroundBlur_382_3959"/></filter></defs></svg>
