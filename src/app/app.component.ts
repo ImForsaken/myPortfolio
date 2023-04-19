@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
 import * as AOS from 'aos';
 
 @Component({
@@ -7,25 +6,15 @@ import * as AOS from 'aos';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  constructor(public router: Router) {}
+export class AppComponent implements AfterViewInit {
+  constructor() {}
 
   title = 'Portfolio';
-
-  imprintRoute = false;
 
   ngAfterViewInit() {
     window.onload = () => {
       AOS.init({ once: true });
       // AOS.init();
     };
-  }
-
-  ngOnInit() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.imprintRoute = event.url.includes('/imprint');
-      }
-    });
   }
 }
