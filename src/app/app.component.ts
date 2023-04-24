@@ -12,9 +12,7 @@ export class AppComponent implements AfterViewInit {
   title = 'Portfolio';
 
   ngAfterViewInit() {
-    window.onload = () => {
-      AOS.init({ once: true });
-      // AOS.init();
-    };
+    AOS.init({ once: true });
+    // AOS.init();
   }
 }
