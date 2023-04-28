@@ -27,7 +27,7 @@ export class ProjectComponent {
       ],
       image: 'projectJoin.png',
       links: [
-        'https://herbst-kevin.de/Join/index.html',
+        'https://herbst-kevin.de/Join/login.html',
         'https://github.com/ImForsaken/Join-282',
       ],
     },
@@ -56,29 +56,6 @@ export class ProjectComponent {
         'https://herbst-kevin.de/El%20pollo%20loco/index.html',
         'https://github.com/ImForsaken/El-pollo-loco',
       ],
-    },
-    {
-      title: 'Pokedex',
-      skills: ['JavaScript', 'HTML', 'CSS', 'Rest-Api', 'Chart.js'],
-      text: [
-        'Beautiful Pokedex from the famous Pokemon Anime/Game. Search, Learn about your favourite Pokemons from the Pokemon universe!',
-        'Schöner Pokedex aus dem berühmten Pokemon-Anime/Spiel. Durchsuche und lerne mehr über deine Lieblings-Pokemons aus dem Pokemon-Universum!',
-      ],
-      image: 'projectPokedex.png',
-      links: [
-        'https://herbst-kevin.de/Pokemondex/index.html',
-        'https://github.com/ImForsaken/Pokedex',
-      ],
-    },
-    {
-      title: 'Simple CRM',
-      skills: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'Firebase'],
-      text: [
-        'Relationship Management system working with CRUD functionality.',
-        'Kundenbeziehungsmanagement-System mit CRUD-Funktionalität.',
-      ],
-      image: 'projectCrm.png',
-      links: ['https://herbst-kevin.de', 'https://github.com/ImForsaken'],
     },
   ];
 }

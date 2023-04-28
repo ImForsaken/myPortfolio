@@ -63,15 +63,13 @@
     transform: translate3d(0, 0, 0) translateY(-500px) rotate(180deg);
   }
   &.aos-animate {
-    transform: translateY(0px) translate3d(0, 0, 0) translateZ(0) rotate(180deg)
-      translate(12%, 14%) !important;
+    transform: translateY(0px) rotate(180deg) translate(12%, 14%) !important;
   }
 
   @media (min-width: 992px) {
     font-size: clamp(0.5rem, 4.65vw, 6rem);
     &.aos-animate {
-      transform: translateY(0px) translate3d(0, 0, 0) translateZ(0)
-        rotate(180deg) translate(10%, 6.5%) !important;
+      transform: translateY(0px) rotate(180deg) translate(10%, 6.5%) !important;
     }
   }
 }
